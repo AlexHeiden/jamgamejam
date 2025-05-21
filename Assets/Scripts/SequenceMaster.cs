@@ -47,6 +47,7 @@ public class SequenceMaster : MonoBehaviour
         if (sequence.Count == 0)
         {
             score++;
+            scoreText.text = "Score: " + score;
             NextSequence();
         }
     }
