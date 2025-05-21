@@ -6,7 +6,8 @@ public class SequenceMaster : MonoBehaviour
 {
     public static SequenceMaster Instance { get; private set; }
 
-    private TextMeshPro scoreText;
+    [SerializeField] private TextMeshProUGUI scoreText;
+    
     private List<int> sequence;
     private int score;
 
@@ -20,7 +21,6 @@ public class SequenceMaster : MonoBehaviour
         Instance = this;
         DontDestroyOnLoad(gameObject);
 
-        scoreText = GameObject.Find("Text").GetComponent<TextMeshPro>();
         sequence = new List<int>();
         score = 0;
         NextSequence();
