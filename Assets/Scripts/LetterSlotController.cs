@@ -12,6 +12,7 @@ public class LetterSlotManager : MonoBehaviour
 
     void Update()
     {
+        currentSequence.Clear();
         // 🟡 Пример: получаем новые данные каждый кадр
         List<int> inputFromBackend = SequenceMaster.Instance.GetSequence();
 
@@ -20,6 +21,12 @@ public class LetterSlotManager : MonoBehaviour
             char letter = (char)('a' + num - 1);
             currentSequence.Add(letter);
         }
+
+        for (int i = 0; i < letterButtons.Count; i++)
+        {
+            letterButtons[i].GetComponentInChildren<Text>().text = currentSequence[i].ToString();
+        }
+        
         //UpdateLetterSlots(inputFromBackend);
         //HandleKeyboardInput();
     }
