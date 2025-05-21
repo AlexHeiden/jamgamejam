@@ -21,6 +21,7 @@ public class SequenceMaster : MonoBehaviour
         Instance = this;
         DontDestroyOnLoad(gameObject);
 
+        scoreText.text = "Score: " + score;
         sequence = new List<int>();
         score = 0;
         NextSequence();
