@@ -67,12 +67,17 @@ namespace DefaultNamespace
                     score += 100;
                     scoreText.text = score.ToString();
                     
+                    
                     GenerateSequence();
                     DisplaySequence();
                 }
             }
             else
             {
+                foreach (var text in numberTexts)
+                    StartCoroutine(FlashColor(text, Color.red));
+                score -= 100;
+                scoreText.text = score.ToString();
                 Debug.Log("Wrong input!");
                 inputIndex = 0;
                 // Optional: flash red or reset
